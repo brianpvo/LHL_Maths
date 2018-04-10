@@ -8,29 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import "AdditionQuestion.h"
+#import "InputHandler.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         BOOL gameOn = YES;
         while (gameOn) {
-            char inputChar[255];
             AdditionQuestion *additionQuestion = [[AdditionQuestion alloc] init];
             NSLog(@"%@", [additionQuestion question]);
-            NSLog(@"%li", [additionQuestion answer]);
             
-            fgets(inputChar, 255, stdin);
-            
-            NSString* inputString = [NSString stringWithCString:inputChar encoding:NSUTF8StringEncoding];
-            inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            InputHandler *inputHandle = [[InputHandler alloc] init];
             
             NSString* quit = @"quit\n";
-            if ([[inputString lowercaseString] isEqualToString:quit]) {
-                NSLog(@"Im in quit ");
+            if ([[[inputHandle parse] lowercaseString] isEqualToString:quit]) {
                 gameOn = NO;
                 break;
             }
             
-            if ([inputString intValue] == [additionQuestion answer]) {
+            if ([[inputHandle parse] intValue] == [additionQuestion answer]) {
                 NSLog(@"Right!");
             }
             else {
