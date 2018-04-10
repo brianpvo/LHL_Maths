@@ -10,6 +10,7 @@
 		7A722242207D3C9900AE5F2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A722241207D3C9900AE5F2F /* main.m */; };
 		7A72224A207D411500AE5F2F /* AdditionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A722249207D411500AE5F2F /* AdditionQuestion.m */; };
 		7A72224D207D537500AE5F2F /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A72224C207D537500AE5F2F /* InputHandler.m */; };
+		7A722250207D5B2600AE5F2F /* ScoreKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A72224F207D5B2600AE5F2F /* ScoreKeeper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		7A722249207D411500AE5F2F /* AdditionQuestion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdditionQuestion.m; sourceTree = "<group>"; };
 		7A72224B207D537500AE5F2F /* InputHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
 		7A72224C207D537500AE5F2F /* InputHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
+		7A72224E207D5B2600AE5F2F /* ScoreKeeper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreKeeper.h; sourceTree = "<group>"; };
+		7A72224F207D5B2600AE5F2F /* ScoreKeeper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreKeeper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				7A722249207D411500AE5F2F /* AdditionQuestion.m */,
 				7A72224B207D537500AE5F2F /* InputHandler.h */,
 				7A72224C207D537500AE5F2F /* InputHandler.m */,
+				7A72224E207D5B2600AE5F2F /* ScoreKeeper.h */,
+				7A72224F207D5B2600AE5F2F /* ScoreKeeper.m */,
 			);
 			path = Maths;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A722250207D5B2600AE5F2F /* ScoreKeeper.m in Sources */,
 				7A722242207D3C9900AE5F2F /* main.m in Sources */,
 				7A72224D207D537500AE5F2F /* InputHandler.m in Sources */,
 				7A72224A207D411500AE5F2F /* AdditionQuestion.m in Sources */,

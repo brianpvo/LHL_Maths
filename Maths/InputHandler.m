@@ -10,22 +10,9 @@
 
 @implementation InputHandler
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _count = 1;
-    }
-    return self;
-}
-
-
 -(NSString *)parse {
     char inputChar[255];
-    if (_count == 1) {
-        fgets(inputChar, 255, stdin);
-        _count++;
-    }
+    fgets(inputChar, 255, stdin);
     
     NSString* inputString = [NSString stringWithCString:inputChar encoding:NSUTF8StringEncoding];
     
@@ -33,5 +20,11 @@
     
     return inputString;
 }
+
++(int)getIntValue:(NSString *) string {
+    return [string intValue];
+}
+
+
 
 @end

@@ -1,5 +1,5 @@
 //
-//  InputHandler.h
+//  ScoreKeeper.h
 //  Maths
 //
 //  Created by Brian Vo on 2018-04-10.
@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface InputHandler : NSObject
+@interface ScoreKeeper : NSObject
 
--(NSString *)parse;
+@property float right;
+@property float wrong;
 
-+(int)getIntValue:(NSString *) string;
+-(NSString *)score;
 
 @end
