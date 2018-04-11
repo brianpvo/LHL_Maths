@@ -7,20 +7,29 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdditionQuestion.h"
+#import "Question.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         BOOL gameOn = YES;
         ScoreKeeper *score = [[ScoreKeeper alloc] init];
+        InputHandler *inputHandle = [[InputHandler alloc] init];
+        QuestionManager *questionManager = [[QuestionManager alloc] init];
+        QuestionFactory *questionFactory = [[QuestionFactory alloc] init];
         
         while (gameOn) {
-            AdditionQuestion *additionQuestion = [[AdditionQuestion alloc] init];
-            NSLog(@"%@", [additionQuestion question]);
+            //Question *question = [[Question alloc] init];
+            Question *question = [questionFactory generateRandomQuestion];
+            [question generateQuestion];
+            [[questionManager questions] addObject:question];
+
+            NSLog(@"%@", [question question]);
             
-            InputHandler *inputHandle = [[InputHandler alloc] init];
+//            InputHandler *inputHandle = [[InputHandler alloc] init];
             NSString *parsedInput = [inputHandle parse];
             int inputHandlerInt = [InputHandler getIntValue:parsedInput];
             
@@ -30,18 +39,17 @@ int main(int argc, const char * argv[]) {
                 break;
             }
             
-            if (inputHandlerInt == [additionQuestion answer]) {
+            if (inputHandlerInt == [question answer]) {
                 NSLog(@"Right!");
-                NSLog(@"%i", inputHandlerInt);
                 score.right++;
             }
             else {
                 NSLog(@"Wrong!");
-                NSLog(@"%i", inputHandlerInt);
                 score.wrong++;
             }
+            NSLog(@"%@", [score score]);
+            NSLog(@"%@",[questionManager timeOutput]);
         }
-        NSLog(@"%@", [score score]);
     }
     return 0;
 }

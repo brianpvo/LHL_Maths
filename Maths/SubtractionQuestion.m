@@ -1,14 +1,14 @@
 //
-//  AdditionQuestion.m
+//  SubtractionQuestion.m
 //  Maths
 //
 //  Created by Brian Vo on 2018-04-11.
 //  Copyright © 2018 Brian Vo. All rights reserved.
 //
 
-#import "AdditionQuestion.h"
+#import "SubtractionQuestion.h"
 
-@implementation AdditionQuestion
+@implementation SubtractionQuestion
 
 - (instancetype)init
 {
@@ -20,8 +20,8 @@
 }
 
 -(void)generateQuestion {
-    [super setQuestion:[NSString stringWithFormat:@"%i + %i ?", [super rightValue], [super leftValue]]];
-    [super setAnswer:[super rightValue] + [super leftValue]];
+    [super setQuestion:[NSString stringWithFormat:@"%i - %i ?", [super rightValue], [super leftValue]]];
+    [super setAnswer:[super rightValue] - [super leftValue]];
 }
 
 @end
